@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask App</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flask App</h1>
+
+        <p>Enter a message to communicate with the Flask backend.</p>
+
+        <form id="message-form">
+            <input
+                type="text"
+                id="message"
+                placeholder="Enter your message..."
+                required
+            >
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="loading" hidden>Processing...</div>
+
+        <div id="result" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
